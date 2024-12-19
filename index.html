@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itachi</title>
+    <style>
+        /* إعدادات عامة */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        /* رأس الصفحة */
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+        /* التنقل */
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+        
+        nav ul li {
+            display: inline;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+        /* قسم البطل (Hero) */
+        
+        #hero {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        #hero h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        
+        #hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f39c12;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        /* قسم نبذة عني */
+        
+        #about {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #F0F8FF;
+        }
+        
+        #about h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        #about p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* قسم خدماتي */
+        
+        #services {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .service-container {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .service {
+            background-color: white;
+            text-align: right;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service:hover {
+            transform: translateY(-10px);
+            text-align: right;
+        }
+        
+        .service h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        
+        .service p {
+            font-size: 16px;
+            color: #7f8c8d;
+            text-align: right;
+        }
+        /* قسم أعمالي */
+        
+        #portfolio {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .portfolio-item {
+            background-color: #34495e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .portfolio-item p {
+            padding: 10px;
+            background-color: #1a242f;
+            color: white;
+        }
+        /* قسم تواصل معي */
+        
+        #contact {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #ecf0f1;
+        }
+        
+        #contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        form input,
+        form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        form button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        form button:hover {
+            background-color: #f39c12;
+        }
+        /* تذييل الصفحة */
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: #f39c12;
+        }
+        /* استجابة الهاتف */
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            form {
+                grid-template-columns: 1fr;
+            }
+            .service-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>itachi نورت موقع</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">نبذة عني</a></li>
+                <li><a href="#services">خدماتي</a></li>
+                <li><a href="#portfolio">أعمالي</a></li>
+                <li><a href="#contact">تواصل معي</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- قسم Hero -->
+    <section id="hero">
+        <h2>Welcome Web Itachi</h2>
+        <p>أنا مطوّر ويب محترف. يمكنني مساعدتك في بناء موقعك الإلكتروني.</p>
+        <a href="https://web.telegram.org/k/#@X_T6M" class="btn">تواصل معي</a>
+    </section>
+
+    <!-- نبذة عني -->
+    <section id="about">
+        <h2>نبذة عني</h2>
+        <p>أنا ايتاتشي، مطوّر ويب بخبرة في تصميم وتطوير المواقع باستخدام أحدث التقنيات. أحب أن أساعد الشركات والأفراد في إنشاء مواقع ويب رائعة.</p>
+    </section>
+
+    <!-- خدماتي -->
+    <section id="services">
+        <h2>خدماتي</h2>
+        <div class="service-container">
+            <div class="service">
+                <h3>تصميم المواقع</h3>
+                <p>أصمم مواقع ويب جذابة وسهلة الاستخدام لتناسب احتياجات عملك.</p>
+            </div>
+            <div class="service">
+                <h3>تطوير المواقع</h3>
+                <p>أقوم بتطوير مواقع ويب عالية الأداء باستخدام تقنيات حديثة.</p>
+            </div>
+            <div class="service">
+                <h3>دعم وصيانة</h3>
+                <p>أوفر خدمات دعم فني وصيانة للمواقع بعد إطلاقها لضمان استمرارية الأداء.</p>
+            </div>
+        </div>
